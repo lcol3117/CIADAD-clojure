@@ -15,3 +15,10 @@
   (def index-min
     (.indexOf options mindist))
   (get options index-min)))
+(defn ciad-not-self [a,b] (do 
+  (def initial
+    (ciad a b))
+  (if 
+    (= initial 0)
+    initial
+    ##Inf)))
