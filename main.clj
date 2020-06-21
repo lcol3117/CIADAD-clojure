@@ -5,7 +5,7 @@
   (def median-dist
     (median cia-dists))
   (map cia-dists
-    (fn [x] (< x median-dist))))
+    (fn [x] (< x median-dist)))))
 (defn get-CIAD-not-self [point,data] (do 
   (def options
     (map data
@@ -31,5 +31,13 @@
       (fn [x] (abs (- (nth a x) (nth b x))))))
   (reduce max dists)))
 (defn abs [n] (do
-  (max
-    n (- 0 n))))
+  (max n (- 0 n))))
+(defn median [l] (do
+  (def sorted
+    (sort l))
+  (def middle
+    (/ (count l) 2))
+  (def index
+    (Math/ceil middle))
+  (nth sorted index)
+  ))
