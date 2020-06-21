@@ -32,4 +32,4 @@
   (reduce max dists)))
 (defn abs [n] (do
   (max
-    (n) (- 0 n))))
+    n (- 0 n))))
