@@ -1,7 +1,7 @@
 (defn ciadad [data] (do 
   (def cia-dists
     (map data
-      (fn [x] (getCIAD-not-self x data))))
+      (fn [x] (get-CIAD-not-self x data))))
   (def median-dist
     (median cia-dists))
   (map cia-dists
@@ -22,3 +22,14 @@
     (= initial 0)
     initial
     ##Inf)))
+(defn ciad [a,b] (do
+  (def dimrange
+    (range 0
+      (count a)))
+  (def dists
+    (map
+      (fn [x] (abs (- (nth a x) (nth b x))))))
+  (reduce max dists)))
+(defn abs [n] (do
+  (max
+    (n) (- 0 n))))
